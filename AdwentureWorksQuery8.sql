@@ -19,7 +19,7 @@ CountryTaxRates AS (
        --not all regions have data with taxes; this column represents the percentage of provinces with available tax rates for each country
         ROUND(COUNT(DISTINCT CASE WHEN MaxTaxRate IS NOT NULL THEN StateProvince.StateProvinceID END) / (COUNT(DISTINCT StateProvince.StateProvinceID)), 2) perc_provinces_w_tax
     FROM `adwentureworks_db.stateprovince` StateProvince
-    --some states have multiple tax rates so the highest one is chosen
+    --some states have multiple tax rates so the highest one is selected
     LEFT JOIN (
                 SELECT StateProvinceID, MAX(TaxRate) AS MaxTaxRate
                 FROM `adwentureworks_db.salestaxrate` SalesTaxRate

@@ -1,2 +1,2 @@
 # AdwentureWorksQuery
-[View PDF](Desktop/AdwentureWorks.pdf)
+![image](Pictures/AdwentureWorks.jpg)
